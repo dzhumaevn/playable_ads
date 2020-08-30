@@ -1,0 +1,188 @@
+body, html {
+    overflow: hidden;
+    margin: 0
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg {
+    opacity: 0;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+
+.restOptions,
+.countryChoosing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 500ms;
+}
+
+.restOptions {
+    transform: translateY(-100%);
+    z-index: 0;
+}
+
+.countryChoosing {
+    z-index: 1;
+}
+
+.bg2 {
+    opacity: 1;
+}
+
+input {
+    position: absolute;
+    left: 16%;
+    width: 67%;
+    height: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    background-color: #0000;
+}
+
+input::-webkit-slider-thumb,
+input::-moz-range-thumb,
+input::-ms-thumb {
+    background: #ffffff;
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+.budget {
+    top: 42.4%;
+}
+
+.days {
+    top: 54.2%;
+}
+
+.month {
+    top: 65.3%;
+}
+
+.done {
+    position: absolute;
+    width: 56%;
+    top: 78%;
+    left: 22%;
+    transition: 100ms;
+}
+
+.done:active {
+    transform: scale(0.9);
+}
+
+#countries,
+.countryNames {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#countries .countrieWrapper,
+#countries .country {
+    width: 100%;
+    height: 100%;
+}
+
+.countryName {
+    position: absolute;
+    width: 56%;
+    top: 2%;
+    left: 50%;
+    background: #fff;
+    padding: 2% 4%;
+    border-radius: 10px;
+    transform: translateX(-50%) rotateX(360deg);
+    transition: 300ms;
+    opacity: 0;
+    z-index: 1;
+}
+
+.countryName.show {
+    transform: translateX(-50%) rotateX(0);
+    opacity: 1;
+}
+
+.customNavArrows {
+    position: absolute;
+    top: 4.4%;
+    left: 50%;
+    width: 96%;
+    height: 2.4%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(-50%);
+}
+
+.customNav {
+    height: 100%;
+}
+
+.customNav:active {
+    transform: scale(0.9);
+}
+
+.arrowPointer {
+    position: absolute;
+    z-index: 1;
+    width: 15%;
+    top: 89%;
+    left: 61%;
+}
+
+.plane {
+    position: absolute;
+    top: 86%;
+    left: 78%;
+    width: 20%;
+    z-index: 1;
+}
+
+.lastScr {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: 500ms;
+}
+
+.download {
+    position: absolute;
+    width: 38%;
+    height: 7%;
+    top: 49%;
+    left: 13%;
+    display: none;
+}

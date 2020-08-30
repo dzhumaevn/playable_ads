@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="ad.size" content="width=100%,height=100%">
+    <link rel="stylesheet" href="owl/owl.carousel.min.css">
+    <title>Document</title>
+    <style>
+        body, html {
+            overflow: hidden;
+            margin: 0
+        }
+
+        body {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center
+        }
+
+        .container {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .bg {
+            opacity: 0;
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
+        .restOptions,
+        .countryChoosing {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: 1500ms cubic-bezier(0.37, 1.26, 0.89, -0.2);
+        }
+
+        .restOptions {
+            transform: translateY(-100%);
+            z-index: 0;
+        }
+
+        .countryChoosing {
+            z-index: 1;
+        }
+
+        .bg2 {
+            opacity: 1;
+        }
+
+        input {
+            position: absolute;
+            left: 16%;
+            width: 67%;
+            height: 0;
+            margin: 0;
+            -webkit-appearance: none;
+            background-color: #0000;
+        }
+
+        input::-webkit-slider-thumb,
+        input::-moz-range-thumb,
+        input::-ms-thumb {
+            background: url(img/slider_screen1.png) no-repeat center/contain;
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border: none;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        .budget {
+            top: 42.4%;
+        }
+
+        .days {
+            top: 54.2%;
+        }
+
+        .month {
+            top: 65.3%;
+        }
+
+        .done {
+            position: absolute;
+            width: 56%;
+            top: 78%;
+            left: 22%;
+            transition: 100ms;
+        }
+
+        .done:active {
+            transform: scale(0.9);
+        }
+
+        #countries,
+        .countryNames {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        #countries .countrieWrapper,
+        #countries .country {
+            width: 100%;
+            height: 100%;
+        }
+
+        .countryName {
+            position: absolute;
+            width: 56%;
+            top: 2%;
+            left: 50%;
+            background: #fff;
+            padding: 2% 4%;
+            border-radius: 10px;
+            transform: translateX(-50%) rotateX(360deg);
+            transition: 300ms;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .countryName.show {
+            transform: translateX(-50%) rotateX(0);
+            opacity: 1;
+        }
+
+        .customNavArrows {
+            position: absolute;
+            top: 4.4%;
+            left: 50%;
+            width: 96%;
+            height: 2.4%;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            transform: translateX(-50%);
+        }
+
+        .customNav {
+            height: 100%;
+        }
+
+        .customNav:active {
+            transform: scale(0.9);
+        }
+
+        .arrowPointer {
+            position: absolute;
+            z-index: 1;
+            width: 15%;
+            top: 89%;
+            left: 61%;
+        }
+
+        .plane {
+            position: absolute;
+            top: 86%;
+            left: 78%;
+            width: 20%;
+            z-index: 1;
+        }
+
+        .lastScr {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateY(-100%);
+            transition: 500ms;
+        }
+
+        .download {
+            position: absolute;
+            width: 38%;
+            height: 7%;
+            top: 49%;
+            left: 13%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="img/lastscreen_bg.png" class="bg">
+
+    <div class="restOptions">
+        <img src="img/screen-1.png" class="bg bg2">
+        <input type="range" class="budget" max="30000" value="7000" step="any">
+        <input type="range" class="days" max="30" value="6" step="any">
+        <input type="range" class="month" max="12" value="2" step="any">
+
+        <img src="img/done.png" class="done">
+
+        <img src="img/lastscreen_bg.png" class="lastScr">
+        <div class="download"></div>
+    </div>
+
+    <div class="countryChoosing">
+        <div id="countries" class="owl-carousel">
+            <div class="countrieWrapper">
+                <img src="img/Afrika_bg.png" class="country">
+            </div>
+            <div class="countrieWrapper">
+                <img src="img/Asia_bg.png" class="country">
+            </div>
+            <div class="countrieWrapper">
+                <img src="img/USA_bg.png" class="country">
+            </div>
+            <div class="countrieWrapper">
+                <img src="img/Europe_bg.png" class="country">
+            </div>
+            <div class="countrieWrapper">
+                <img src="img/Austarl_text.png" class="country">
+            </div>
+        </div>
+
+        <div class="customNavArrows">
+            <img src="img/arrow_prev.png" class="customNav prev">
+            <img src="img/arrow_next.png" class="customNav next">
+        </div>
+
+        <div class="countryNames">
+            <img src="img/Afrk_Text.png" class="countryName show">
+            <img src="img/Asia_Text.png" class="countryName">
+            <img src="img/USA_Text.png" class="countryName">
+            <img src="img/Euro_text.png" class="countryName">
+            <img src="img/Austr_Text.png" class="countryName">
+        </div>
+
+        <img src="img/arrow_1.png" class="arrowPointer">
+        <img id="draggable" src="img/plane.png" class="plane">
+    </div>
+</div>
+
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+<script src="jquery/jquery.ui.touch-punch.min.js"></script>
+<script src="owl/owl.carousel.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
+
+
